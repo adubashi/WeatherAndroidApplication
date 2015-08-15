@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="#ffffb959">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:id="@+id/temperatureLabel"
+        android:textSize="100sp"
+        android:textColor="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/degreeImageView"
+        android:src="@drawable/degree"
+        android:layout_toEndOf="@+id/temperatureLabel"
+        android:layout_alignTop="@+id/temperatureLabel"
+        android:layout_toRightOf="@+id/temperatureLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="At 5:00 PM it will be"
+        android:id="@+id/timeLabel"
+        android:textColor="#96ffffff"
+        android:layout_above="@+id/temperatureLabel"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alcatrez Island, CA"
+        android:id="@+id/locationLabel"
+        android:textColor="#ffffffff"
+        android:textSize="24dp"
+        android:layout_above="@+id/timeLabel"
+        android:layout_alignLeft="@+id/timeLabel"
+        android:layout_alignStart="@+id/timeLabel" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iconImageView"
+        android:src="@drawable/cloudy"
+        android:layout_toStartOf="@+id/weatherLabel"
+        android:layout_above="@+id/locationLabel"
+        android:layout_alignRight="@+id/locationLabel"
+        android:layout_alignEnd="@+id/locationLabel" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/values"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/temperatureLabel"
+        android:layout_marginTop="10dp"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="50">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="HUMIDITY"
+                android:id="@+id/humidityLabel"
+                android:textColor="#80ffffff"
+                android:textSize="20sp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="0.88"
+                android:id="@+id/humidityValue"
+                android:textColor="#ffffffff"
+                android:textSize="14dp"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="50">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Precipitation"
+                android:id="@+id/preciptitationLabel"
+                android:layout_gravity="right"
+                android:textColor="#80ffffff"
+                android:textSize="20sp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="100%"
+                android:id="@+id/precipitationValue"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_horizontal|right"
+                android:textColor="#ffffffff"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stormy with a chance of rain"
+        android:id="@+id/weatherLabel"
+        android:textColor="#ffffffff"
+        android:textSize="18dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/refresh"
+        android:layout_above="@+id/iconImageView"
+        android:layout_centerHorizontal="true"
+        android:text="Refresh" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_toStartOf="@+id/degreeImageView"
+        android:layout_alignLeft="@+id/refresh"
+        android:layout_alignStart="@+id/refresh"
+        android:layout_alignTop="@+id/iconImageView"
+        android:layout_alignRight="@+id/refresh"
+        android:layout_alignEnd="@+id/refresh" />
+
+</RelativeLayout>
